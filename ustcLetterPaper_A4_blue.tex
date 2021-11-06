@@ -1,0 +1,55 @@
+\documentclass[11pt,a4paper]{letter}
+\usepackage[top=1.5in, bottom=40mm]{geometry}%
+\usepackage{wallpaper}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc} 
+\usepackage{concrete}  
+\PassOptionsToPackage{dvipsnames,svgnames}{xcolor}
+\usepackage[object=vectorian]{pgfornament}
+\usepackage{lipsum}
+\usetikzlibrary{shapes.multipart}
+\setlength{\hoffset}{8mm}
+\setlength{\voffset}{13mm}
+
+% change cmyk as {0,0.96,1,0} for red letter paper
+% one should also change the sourcePDF
+\ULCornerWallPaper{0.43}{./sourcePDF/ustc}
+\URCornerWallPaper{0.53}{./sourcePDF/line}
+\definecolor{ustcblue}{cmyk}{1,0.8,0,0} 
+
+\newcommand{\sqbox}{\textcolor{ustcblue}{\hskip.3mm\rule[.25mm]{1mm}{1mm}\hskip.4mm\ }}
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\renewcommand{\headrulewidth}{0pt}
+\fancyhfoffset[l]{13mm}
+\fancyhfoffset[r]{13mm}
+\renewcommand{\footrule}{{\color{ustcblue}%
+\vskip-\footruleskip\vskip-\footrulewidth
+\hrule width\headwidth height\footrulewidth\vskip\footruleskip}}
+\renewcommand{\footrulewidth}{1pt}
+\setlength{\footskip}{22pt}
+
+\cfoot{}
+
+\setlength{\oddsidemargin}{0mm}
+\setlength{\textwidth}{145mm}
+
+\usepackage{lipsum}% provides filler text
+
+\begin{document}
+
+\begin{tikzpicture}[xshift=7.25cm,yshift=-10.15cm,color=black!60,scale=0.95,overlay]
+\node[minimum width=10cm,minimum height=21cm,fill=gray!0,inner sep=0pt](vecbox){}; 
+\foreach \y in {-7,-6.3,-5.6,-4.9,-4.2,-3.5,-2.8,-2.1,-1.4,-0.7,0,0.7,1.4,2.1, 2.8, 3.5,4.2,4.9, 5.6,6.3,7}
+% for B5 {-7,-6,-5,-4,-3,-2,-1,0,1,2,3,4,5,6,7}
+% and change the yshift before
+\draw[black!40] (-9cm,1.6*\y cm) -- (9cm,1.6*\y cm);
+\end{tikzpicture} 
+
+\begin{letter}
+
+
+\end{letter}
+
+\end{document}
